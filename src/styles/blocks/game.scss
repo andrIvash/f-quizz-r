@@ -1,0 +1,260 @@
+.game {
+  display: flex;
+  min-height: 82vh;
+  flex-direction: column;
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1200px;
+
+    
+    @include tablet() {
+      max-width: rem(800px);
+    }
+  
+  }
+}
+
+.game_final,
+.game_foto {
+  .question {
+    .container {
+      max-width: rem(1000px);
+    }
+  }
+}
+
+.title.game__title,
+.game__final-title,
+.game__result-score {
+  color: #2c2c2c;
+  font-family: $font-title;
+  font-size: rem(35px);
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #fff,
+  2px 3px 0 rgba(0, 0, 0, 0.21),
+  -1px 1px 0 #fff,
+  1px 1px 0 #fff;
+  text-align: center;
+}
+
+.title.game__title {
+  margin: rem(10px) 0 0 0;
+}
+.game__cards {
+  width: 100%;
+  margin: 0;
+  padding: rem(10px) 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards__item {
+  width: rem(215px);
+  height: rem(290px);
+  margin: rem(7px);
+}
+
+.cards__img {
+  height: 100%;
+  width: auto;
+}
+
+.answers {
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: rem(40px);
+}
+
+.question {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include url('questfon.jpg');
+
+  .container {
+    flex: 1;
+  }
+}
+
+.game_foto {
+  .question {
+    background-image: none;
+
+    .container {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.question__text {
+  color: #fff;
+  font-family: $font-text;
+  font-size: rem(30px);
+  margin: rem(40px) 0;
+  text-align: center;
+}
+
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(380px);
+  height: rem(61px);
+  box-shadow: 0 6px 0 rgba(27, 27, 27, 0.21), 0 2px 0 rgba(27, 27, 27, 0.86);
+  border-radius: 10px;
+  background-color: #11641f;
+  cursor: pointer;
+  margin: rem(10px) rem(10px);
+  color: #fff;
+  font-family: $font-text;
+  font-size: rem(30px);
+  &:hover {
+    background-color: #147524;
+  }
+}
+
+.answer.ok {
+  border: 3px solid #61ff00;
+}
+
+.answer.err {
+  border: 3px solid #c30a00;
+}
+
+.question__banner {
+  width: rem(800px);
+  height: rem(162px);
+  margin: 0 auto;
+
+  @include url('banner.jpg');
+}
+
+.game__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: rem(50px);
+}
+
+.game__final-title {
+  font-size: rem(80px);
+  text-transform: uppercase;
+  margin: rem(30px) 0;
+}
+
+.game__result-text {
+  color: #2c2c2c;
+  font-family: $font-title;
+  font-size: rem(30px);
+  text-transform: uppercase;
+}
+
+.game__result-score {
+  font-size: rem(80px);
+  text-transform: uppercase;
+  margin: rem(10px) 0;
+}
+
+.stickers {
+  width: 100%;
+  margin: 0;
+  padding: rem(20px) 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.stickers__elem {
+  margin: rem(5px);
+  flex: 1 1 rem(200px);
+  display: flex;
+  align-items: center;
+}
+
+.stickers__img {
+  width: auto;
+  height: auto;
+}
+
+.stickers__text {
+  color: #ffffff;
+  font-family: $font-text;
+  font-size: rem(16px);
+  margin-left: rem(10px);
+}
+
+.main__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: rem(20px) 0;
+
+  .title {
+    width: 85%;
+  }
+
+  .main__header-link {
+    width: 15%;
+    color: #ffffff;
+    font-family: $font-text;
+    font-size: rem(14px);
+    padding-left: 20px;
+    display: block;
+    position: absolute;
+    left: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      top: -3px;
+      left: 0;
+      position: absolute;
+
+      @include url('back.svg');
+    }
+
+    @include tablet { 
+      top: 0;
+    }
+  }
+
+  @include tablet {
+    flex-direction: column;
+    margin: rem(20px) 0;
+    justify-content: center;
+    align-items: center;
+
+    .main__header-link {
+      width: 100%;
+    }
+  }
+}
+
+.game_foto {
+  .btn_main {
+    background-color: #c73e3e;
+    margin: 20px 0;
+  
+    &:hover {
+      background-color: #c95454;
+    }
+  }
+}
